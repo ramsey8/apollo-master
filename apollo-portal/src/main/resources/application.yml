@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: apollo-portal
+  profiles:
+    active: ${apollo_profile}
+  resources:
+    cache-period: 3600
+  datasource:
+    url: jdbc:mysql://10.129.0.198:3306/ApolloPortalDB?useUnicode=true&characterEncoding=utf8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+server:
+  port: 8070
+  
+logging:
+  file: /opt/logs/100003173/apollo-portal.log
+
+endpoints:
+  health:
+    sensitive: false
+management:
+  security:
+    enabled: false
+  health:
+    status:
+      order: DOWN, OUT_OF_SERVICE, UNKNOWN, UP 
+
+
